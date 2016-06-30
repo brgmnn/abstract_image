@@ -8,10 +8,15 @@ stages:
 mirror:
   image: alpine:latest
   stage: mirror
+  variables:
+    GIT_STRATEGY: clone
+  only:
+    - master
   script:
     - apk add --update git
-    - git remote set-url --push origin https://$GITHUB_ACCESS_TOKEN@github.com/brgmnn/abstract_image
-    - git push --mirror
+    - git remote set-url --push origin https://$GITHUB_ACCESS_TOKEN@github.com/brgmnn/abstract_image.git
+    - git checkout master
+    - git push origin master --force
 
 lint:
   stage: lint
