@@ -1,8 +1,8 @@
 language: ruby
 
 rvm:
-  - 2.2
-  - 2.3
+  - 2.2.0
+  - 2.3.0
 
 script:
     - gem build abstract_image.gemspec
