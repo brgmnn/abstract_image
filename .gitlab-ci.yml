@@ -1,8 +1,17 @@
 image: ruby:2.3
 
 stages:
+  - mirror
   - lint
   - build
+
+mirror:
+  image: alpine:latest
+  stage: mirror
+  script:
+    - apk add --update git
+    - git remote set-url --push origin https://$GITHUB_ACCESS_TOKEN@github.com/brgmnn/abstract_image
+    - git push --mirror
 
 lint:
   stage: lint
@@ -15,3 +24,4 @@ build:
   script:
     - bundle install --deployment
     - gem build abstract_image.gemspec
+
