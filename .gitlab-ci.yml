@@ -1,0 +1,17 @@
+image: ruby:2.3
+
+stages:
+  - lint
+  - build
+
+lint:
+  stage: lint
+  script:
+    - gem install rubocop --version 0.41.1
+    - rubocop
+
+build:
+  stage: build
+  script:
+    - bundle install --deployment
+    - gem build abstract_image.gemspec
