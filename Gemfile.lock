@@ -1,13 +1,35 @@
+PATH
+  remote: .
+  specs:
+    abstract_image (0.0.0)
+      builder (~> 3.2)
+      statistics2 (~> 0.54)
+
 GEM
   remote: https://rubygems.org/
   specs:
+    ast (2.3.0)
     builder (3.2.2)
+    parser (2.3.1.2)
+      ast (~> 2.2)
+    powerpack (0.1.1)
+    rainbow (2.1.0)
+    rubocop (0.42.0)
+      parser (>= 2.3.1.1, < 3.0)
+      powerpack (~> 0.1)
+      rainbow (>= 1.99.1, < 3.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (~> 1.0, >= 1.0.1)
+    ruby-progressbar (1.8.1)
+    statistics2 (0.54)
+    unicode-display_width (1.1.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  builder (~> 3.2)
+  abstract_image!
+  rubocop
 
 BUNDLED WITH
    1.12.5

@@ -29,4 +29,3 @@ build:
   script:
     - bundle install --deployment
     - gem build abstract_image.gemspec
-
