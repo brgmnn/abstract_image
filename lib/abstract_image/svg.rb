@@ -35,16 +35,13 @@ module AbstractImage
                  height: @height,
                  fill: "hsl(#{@hue}, 30%, 5%)"
 
-        1_000.times do
+        1_00.times do
           svg << AbstractImage::Triangle.new(
             @rng,
             hue: @hue,
             x: @rng.rand(@width),
             y: @rng.rand(@height)
           ).svg
-
-          # svg.polygon points: points.join(' '),
-          #   style: "fill:hsl(#{@hue}, #{50}%, #{5 + @rng.rand(20)}%)"
         end
       end
     end

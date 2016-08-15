@@ -21,8 +21,8 @@ mirror:
 lint:
   stage: lint
   script:
-    - gem install rubocop --version 0.41.1
-    - rubocop
+    - bundle install --deployment
+    - bundle exec rubocop
 
 build:
   stage: build
