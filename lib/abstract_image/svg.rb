@@ -9,10 +9,10 @@ module AbstractImage
 
     def view_box
       [
-        0.25 * @width,
-        0.25 * @height,
-        0.5 * @width,
-        0.5 * @height
+        0.1 * @width,
+        0.1 * @height,
+        0.8 * @width,
+        0.8 * @height
       ].join(' ')
     end
 
@@ -29,7 +29,7 @@ module AbstractImage
       xml.svg version: '1.1',
               xmlns: 'http://www.w3.org/2000/svg',
               viewBox: view_box,
-              preserveAspectRatio: 'none' do |svg|
+              preserveAspectRatio: 'yes' do |svg|
 
         svg.rect width: @width,
                  height: @height,
